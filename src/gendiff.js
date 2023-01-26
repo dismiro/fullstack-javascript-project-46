@@ -1,8 +1,9 @@
 import * as fs from 'node:fs'
+import path from 'node:path';
 
-let rawdata = fs.readFileSync('../json_files/file1.json');
-const firstFile = JSON.parse(rawdata);
-rawdata = fs.readFileSync('../json_files/file2.json');
-const secondFile = JSON.parse(rawdata);
-console.log(firstFile)
-console.log(secondFile)
+function getDataFromFile(pathToFile) {
+    const rawdata = fs.readFileSync(path.resolve(...pathToFile));
+    return JSON.parse(rawdata);
+}
+
+export {getDataFromFile }
