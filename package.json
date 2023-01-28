@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/dismiro/fullstack-javascript-project-46/workflows/hexlet-check/badge.svg)](https://github.com/dismiro/fullstack-javascript-project-46/actions)",
   "main": "index.js",
-  "bin":{"gendiff" : "./bin/gendiff.js"},
-  "type":"module",
+  "bin": {
+    "gendiff": "./bin/gendiff.js"
+  },
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +22,10 @@
   "homepage": "https://github.com/dismiro/fullstack-javascript-project-46#readme",
   "dependencies": {
     "commander": "^10.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.32.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
   }
 }
