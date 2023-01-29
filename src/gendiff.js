@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import yaml from 'js-yaml';
 import * as fs from 'node:fs';
 import path from 'node:path';
 
@@ -7,8 +9,11 @@ function getDataFromFile(filepath) {
   switch (path.extname(correctPath)) {
     case ('.json'):
       return JSON.parse(rawdata);
+    case ('.yaml' || '.yml'):
+      return yaml.load(rawdata);
     default:
-      return 'Данный тип файла не поддерживается!';
+      console.log('Данный тип файла не поддерживается!');
+      return null;
   }
 }
 function gendiff(filepath1, filepath2) {
